@@ -13,7 +13,7 @@ import {
   Form,
 } from 'native-base';
 import { Grid } from 'react-native-easy-grid';
-import { ScrollView, Image } from 'react-native';
+import { ScrollView } from 'react-native';
 import useResults from '../hooks/useResults';
 import ResultList from '../components/ResultList';
 
@@ -21,10 +21,10 @@ const Yelp = () => {
   const [ term, setTerm ] = useState('');
   const [ location, setLocation ] = useState('');
   const [ searchApi, results, errorMessage ] = useResults();
-  console.log(results.toString())
+
   const filterResultByPrice = (price) =>{
     return results.filter(result => {
-      return result.price == price
+      return result.price === price
     });
   };
   return (
